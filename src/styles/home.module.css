@@ -1,0 +1,30 @@
+.outer {
+  width: 100vw;
+  height: 100vh;
+}
+
+.inner {
+  width: 60%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: calc(var(--px-size) * 3) 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: calc(var(--px-size) * 2);
+}
+
+.puzzle {
+  background-color: var(--twenty48-primary-bg);
+  height: 150px;
+  border-radius: calc(var(--px-size) * 0.75);
+}
+
+.heading {
+  margin: calc(var(--px-size) * 8) 0 calc(var(--px-size) * 4);
+}

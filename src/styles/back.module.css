@@ -1,0 +1,19 @@
+.back {
+  display: flex;
+  align-items: center;
+  margin: calc(var(--px-size) * 2) 0;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.link {
+  margin-right: calc(var(--px-size));
+}
+
+.link:hover,
+.link:focus {
+  opacity: 0.8;
+}

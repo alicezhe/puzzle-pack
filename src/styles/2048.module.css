@@ -1,0 +1,223 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--twenty48-primary-bg);
+  color: var(--twenty48-primary-text-color);
+}
+
+.twenty48 {
+  margin: calc(var(--px-size) * 0) auto;
+  padding: calc(var(--px-size) * 3);
+  width: fit-content;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.twenty48 > * > header {
+  display: flex;
+  align-items: center;
+  margin: calc(var(--px-size) * 1) calc(var(--px-size) * 0);
+  width: 100%;
+}
+
+.twenty48 > * > header > * {
+  flex: 1;
+}
+
+.board {
+  position: relative;
+  width: calc(var(--px-size) * 8 * 4 + var(--px-size) * 5);
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  background: var(--twenty48-secondary-bg);
+  border: calc(var(--px-size) * 0.5) solid var(--twenty48-secondary-bg);
+  border-radius: calc(var(--px-size) * 0.75);
+}
+
+.cell {
+  width: calc(var(--px-size) * 8);
+  height: calc(var(--px-size) * 8);
+  margin: calc(var(--px-size) * 0.5);
+  border-radius: calc(var(--px-size) * 0.5);
+  background: var(--twenty48-cell-bg);
+}
+
+.tiles {
+  position: absolute;
+  z-index: 2;
+  margin: calc(var(--px-size) * 0.5);
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@media (min-width: 512px) {
+  .board {
+    width: calc(var(--px-size) * 12.5 * 4 + var(--px-size) * 10);
+  }
+
+  .grid {
+    border: calc(var(--px-size) * 1) solid var(--twenty48-secondary-bg);
+  }
+
+  .cell {
+    width: calc(var(--px-size) * 12.5);
+    height: calc(var(--px-size) * 12.5);
+    margin: calc(var(--px-size) * 1);
+  }
+
+  .tiles {
+    margin: calc(var(--px-size) * 1);
+  }
+}
+
+.tile {
+  position: absolute;
+  width: calc(var(--px-size) * 8);
+  height: calc(var(--px-size) * 8);
+  margin: calc(var(--px-size) * 0.5);
+  border-radius: calc(var(--px-size) * 0.5);
+  background: var(--twenty48-tile-bg);
+  color: var(--twenty48-primary-text-color);
+  font-size: calc(var(--px-size) * 4);
+  line-height: calc(var(--px-size) * 8);
+  font-weight: bold;
+  text-align: center;
+  transition-property: left, top, transform;
+  transition-duration: 200ms, 200ms, 100ms;
+}
+
+@media (min-width: 512px) {
+  .tile {
+    width: calc(var(--px-size) * 12.5);
+    height: calc(var(--px-size) * 12.5);
+    margin: calc(var(--px-size) * 1);
+    font-size: calc(var(--px-size) * 6);
+    line-height: calc(var(--px-size) * 12.5);
+  }
+}
+
+/* -=-=-=- START OF TEXT COLOR -=-=-=- */
+.tile8,
+.tile16,
+.tile32,
+.tile64,
+.tile128,
+.tile256,
+.tile512,
+.tile1024,
+.tile2048,
+.tile4096,
+.tile8192 {
+  color: var(--twenty48-secondary-text-color);
+}
+/* -=-=-=-= END OF TEXT COLOR =-=-=-=- */
+
+/* -=-=-=- START OF TEXT SIZE -=-=-=- */
+.tile128,
+.tile256,
+.tile512 {
+  font-size: calc(var(--px-size) * 3.25);
+}
+
+.tile1024,
+.tile2048,
+.tile4096,
+.tile8192 {
+  font-size: calc(var(--px-size) * 2.75);
+}
+
+@media (min-width: 512px) {
+  .tile128,
+  .tile256,
+  .tile512 {
+    font-size: calc(var(--px-size) * 5.5);
+  }
+
+  .tile1024,
+  .tile2048,
+  .tile4096,
+  .tile8192 {
+    font-size: calc(var(--px-size) * 4);
+  }
+}
+/* -=-=-=-= END OF TEXT SIZE =-=-=-=- */
+
+.tile4 {
+  background: #ede0c8;
+}
+
+.tile8 {
+  background: #f2b179;
+}
+
+.tile16 {
+  background: #f59563;
+}
+
+.tile32 {
+  background: #f67c5f;
+}
+
+.tile64 {
+  background: #f65e3b;
+}
+
+.tile128 {
+  background: #edcf72;
+}
+
+.tile256 {
+  background: #edcc61;
+}
+
+.tile512 {
+  background: #edc850;
+}
+
+.tile1024 {
+  background: #edc53f;
+}
+
+.tile2048,
+.tile4096,
+.tile8192 {
+  background: #edc22e;
+}
+
+.score {
+  background: var(--twenty48-secondary-bg);
+  border: calc(var(--px-size) * 0.5) solid var(--twenty48-secondary-bg);
+  border-radius: calc(var(--px-size) * 0.75);
+  color: var(--twenty48-tile-bg);
+  font-size: calc(var(--px-size) * 1.5);
+  line-height: calc(var(--px-size) * 3);
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.score > div {
+  font-size: calc(var(--px-size) * 2.5);
+  color: var(--twenty48-secondary-text-color);
+}
+
+@media (min-width: 512px) {
+  .score {
+    border: calc(var(--px-size) * 1) solid var(--twenty48-secondary-bg);
+    font-size: calc(var(--px-size) * 2);
+    line-height: calc(var(--px-size) * 3.5);
+  }
+
+  .score > div {
+    font-size: calc(var(--px-size) * 3.5);
+  }
+}

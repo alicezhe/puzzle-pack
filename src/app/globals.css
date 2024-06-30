@@ -3,31 +3,41 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+  --px-size: 8px;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  /* 2048 */
+  --twenty48-primary-bg: #faf8ef;
+  --twenty48-secondary-bg: #bbada0;
+  --twenty48-cell-bg: #cac1b5;
+  --twenty48-tile-bg: #eee4da;
+  --twenty48-primary-text-color: #776e65;
+  --twenty48-secondary-text-color: #f9f6f2;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-size: calc(var(--px-size) * 2.25);
+  line-height: calc(var(--px-size) * 3.5);
+  font-family: var(--font-rubik);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+h1 {
+  font-size: calc(var(--px-size) * 5);
+  line-height: calc(var(--px-size) * 5);
+  margin: calc(var(--px-size) * 1.5) calc(var(--px-size) * 0);
+  font-weight: bold;
+}
+
+@media (min-width: 512px) {
+  h1 {
+    font-size: calc(var(--px-size) * 8.5);
+    line-height: calc(var(--px-size) * 8.5);
+    margin: calc(var(--px-size) * 2.25) calc(var(--px-size) * 0);
   }
+}
+
+h2 {
+  font-size: calc(var(--pixel-size) * 2.5);
+  line-height: calc(var(--pixel-size) * 3.75);
+  margin: calc(var(--pixel-size) * 2.5) calc(var(--pixel-size) * 0);
+  font-weight: 600;
 }

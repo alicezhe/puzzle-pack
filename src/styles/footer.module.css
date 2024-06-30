@@ -1,0 +1,29 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: calc(var(--px-size) * 3) 0;
+}
+
+.link {
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.link:hover,
+.link:focus {
+  opacity: 0.8;
+}
+
+.link:not(:last-child) {
+  margin-right: calc(var(--px-size));
+}
+
+.links {
+  display: flex;
+  align-items: center;
+}
