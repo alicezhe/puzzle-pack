@@ -9,7 +9,9 @@ export default function Home() {
         <div>
           <h1 className={styles.heading}>Puzzle Pack</h1>
           <div className={styles.grid}>
-            <Link href="/2048" className={styles.puzzle}>2048</Link>
+            <Link href="/2048" className={styles.puzzle}>
+              2048
+            </Link>
             <div className={styles.puzzle}></div>
             <div className={styles.puzzle}></div>
             <div className={styles.puzzle}></div>

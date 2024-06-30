@@ -19,6 +19,7 @@ export const Puzzle2048Context = createContext({
   getTiles: () => [] as Tile[],
   moveTiles: (_: MoveDirection) => {},
   startGame: () => {},
+  restartGame: () => {},
   score: 0,
 });
 
@@ -69,6 +70,12 @@ export default function Puzzle2048Provider({ children }: PropsWithChildren) {
     dispatch({ type: "create_tile", tile: { position: [0, 2], value: 2 } });
   };
 
+  const restartGame = () => {
+    console.log("restarting");
+    dispatch({ type: "restart" });
+    startGame();
+  };
+
   useEffect(() => {
     if (gameState.hasChanged) {
       setTimeout(() => {
@@ -80,7 +87,13 @@ export default function Puzzle2048Provider({ children }: PropsWithChildren) {
 
   return (
     <Puzzle2048Context.Provider
-      value={{ getTiles, moveTiles, startGame, score: gameState.score }}
+      value={{
+        getTiles,
+        moveTiles,
+        startGame,
+        score: gameState.score,
+        restartGame,
+      }}
     >
       {children}
     </Puzzle2048Context.Provider>

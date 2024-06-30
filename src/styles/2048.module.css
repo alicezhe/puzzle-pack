@@ -24,8 +24,20 @@
   width: 100%;
 }
 
-.twenty48 > * > header > * {
+.flex1 {
   flex: 1;
+}
+
+.restart {
+  flex: 0.4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.restart > * > *:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 .board {

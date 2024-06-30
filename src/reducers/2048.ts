@@ -17,7 +17,8 @@ type Action =
   | { type: "move_down" }
   | { type: "move_left" }
   | { type: "move_right" }
-  | { type: "clean_up" };
+  | { type: "clean_up" }
+  | { type: "restart" };
 
 export const initialState: State = {
   board: createBoard(),
@@ -274,6 +275,9 @@ export default function Puzzle2048Reducer(
         tilesByIds: Object.keys(newTiles),
         hasChanged: false,
       };
+    }
+    case "restart": {
+      return initialState;
     }
     default:
       return state;

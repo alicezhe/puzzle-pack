@@ -15,10 +15,7 @@ export default function Puzzle2048() {
           <div></div>
           <div>
             <BackNavigation fillColor={"#776e65"} />
-            <header>
-              <h1>2048</h1>
-              <Score />
-            </header>
+            <Score />
             <Board />
           </div>
           <Footer fillColor={"#776e65"} />
