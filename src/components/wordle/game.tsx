@@ -47,7 +47,7 @@ export default function Game() {
         });
       }
     }, 2000);
-  }, [state.gameStatus, state.errorMessage]);
+  }, [state.gameStatus, state.errorMessage, dispatch, state.answer]);
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -100,7 +100,7 @@ export default function Game() {
 
   return (
     <div className={styles.main}>
-      <div className={styles.twenty48}>
+      <div className={styles.wordle}>
         <div></div>
         <div className="flex flex-col items-center">
           <div className={styles.header}>

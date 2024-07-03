@@ -44,7 +44,7 @@ export default function Key({ keyData }: KeyboardKeyProps) {
         });
       }
     }
-  }, [state, dispatch]);
+  }, [state, dispatch, value]);
 
   return (
     <div

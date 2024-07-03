@@ -79,7 +79,7 @@ export default function Puzzle2048Provider({ children }: PropsWithChildren) {
         generateRandomTile();
       }, mergeAnimationDuration);
     }
-  }, [gameState.hasChanged]);
+  }, [gameState.hasChanged, generateRandomTile]);
 
   return (
     <Puzzle2048Context.Provider

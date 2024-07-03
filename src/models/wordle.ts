@@ -39,7 +39,7 @@ export type LetterStatus =
 
 export interface KeyboardKey {
   value: string;
-  size: "sm" | "lg";
+  size: string;
 }
 
 export interface KeyboardKeyProps {
