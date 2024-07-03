@@ -1,0 +1,274 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--wordle-light-bg);
+  color: var(--wordle-primary-text-color);
+  font-weight: 500;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toast {
+  visibility: hidden;
+  top: calc(var(--px-size) * 3);
+  position: fixed;
+}
+
+.toast.show {
+  visibility: visible;
+  animation:
+    fadein 0.3s,
+    fadeout 0.3s 2.5s;
+}
+
+.letter {
+  all: unset;
+  background: none;
+  position: relative;
+  width: calc(var(--px-size) * 7);
+  aspect-ratio: 1 / 1;
+  margin: 0 calc(var(--px-size) * 0.5);
+  border: calc(var(--px-size) * 0.25) solid;
+  border-radius: calc(var(--px-size) * 0.75);
+  font-size: calc(var(--px-size) * 4);
+  color: var(--wordle-primary-text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.letter.UNUSED {
+  border-color: var(--wordle-light-gray);
+}
+
+.letter.IN_PROGRESS {
+  border-color: var(--wordle-dark-gray);
+  animation: bounce 0.2s ease-in-out forwards;
+}
+
+.letter.CORRECT {
+  --background-color: var(--wordle-green);
+  --border-color: var(--wordle-green);
+  --color: var(--wordle-primary-bg);
+  animation: flip 0.5s ease forwards;
+}
+
+.letter.MISPLACED {
+  --background-color: var(--wordle-yellow);
+  --border-color: var(--wordle-yellow);
+  --color: var(--wordle-primary-bg);
+  animation: flip 0.5s ease forwards;
+}
+
+.letter.INCORRECT {
+  --background-color: var(--wordle-medium-gray);
+  --border-color: var(--wordle-medium-gray);
+  --color: var(--wordle-primary-bg);
+  animation: flip 0.5s ease forwards;
+}
+
+.letter.flip:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.letter.flip:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.letter.flip:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.letter.flip:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+.letter:focus {
+  outline: none;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--px-size);
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: calc(100vw - 3em);
+  max-width: 375px;
+  margin-bottom: 16px;
+}
+
+.key {
+  position: relative;
+  border-radius: calc(var(--px-size) * 0.75);
+  background-color: var(--wordle-light-gray);
+  height: calc(var(--px-size) * 6);
+}
+
+.key > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.key.key-size-sm {
+  width: calc(var(--px-size) * 4);
+}
+
+.key.key-size-lg {
+  width: 100%;
+  font-size: calc(var(--px-size) * 1.75);
+}
+
+.key.key-state-CORRECT {
+  background-color: var(--wordle-green);
+  color: var(--wordle-primary-bg);
+}
+
+.key.key-state-INCORRECT {
+  background-color: var(--wordle-medium-gray);
+  color: var(--wordle-primary-bg);
+}
+
+.key.key-state-MISPLACED {
+  background-color: var(--wordle-yellow);
+  color: var(--wordle-primary-bg);
+}
+
+.key.key-state-UNUSED {
+  background-color: var(--wordle-light-gray);
+  color: var(--wordle-primary-text-color);
+}
+
+.key.key-state-CORRECT:hover {
+  background-color: var(--wordle-green-hover);
+  color: var(--wordle-primary-bg);
+  transition: all 0.2s ease;
+}
+
+.key.key-state-INCORRECT:hover {
+  background-color: var(--wordle-medium-gray-hover);
+  color: var(--wordle-primary-bg);
+  transition: all 0.2s ease;
+}
+
+.key.key-state-MISPLACED:hover {
+  background-color: var(--wordle-yellow-hover);
+  color: var(--wordle-primary-bg);
+  transition: all 0.2s ease;
+}
+
+.key.key-state-UNUSED:hover {
+  background-color: var(--wordle-light-gray-hover);
+  color: var(--wordle-primary-text-color);
+  transition: all 0.2s ease;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.keyboard-row {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  column-gap: calc(var(--px-size) * 0.75);
+  width: 100%;
+  margin-bottom: calc(var(--px-size) * 0.75);
+}
+
+.keyboard-row-1 {
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  width: 90%;
+}
+
+.keyboard-row-2 {
+  grid-template-columns: 1.8fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1.8fr;
+}
+
+.link:hover,
+.link:focus {
+  opacity: 0.8;
+  transition: all 0.2s ease;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: calc(var(--px-size) * 3);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateX(0);
+    color: var(--wordle-dark-gray);
+    border-color: var(--wordle-dark-gray);
+    background-color: transparent;
+  }
+  45% {
+    transform: rotateX(90deg);
+    color: var(--color);
+    border-color: var(--border-color);
+    background-color: transparent;
+  }
+  55% {
+    transform: rotateX(90deg);
+    background-color: var(--background-color);
+    border-color: var(--border-color);
+    color: var(--color);
+  }
+  100% {
+    transform: rotateX(0deg);
+    background-color: var(--background-color);
+    border-color: var(--border-color);
+    color: var(--color);
+  }
+}

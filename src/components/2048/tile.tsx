@@ -5,7 +5,7 @@ import {
   mergeAnimationDuration,
   containerWidthDesktop,
   containerWidthMobile,
-} from "./constants";
+} from "../../constants/2048";
 import { useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 

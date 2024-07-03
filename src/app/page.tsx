@@ -1,4 +1,4 @@
-import Footer from "@/components/footer";
+import Footer from "@/components/shared/footer";
 import styles from "@/styles/home.module.css";
 import Link from "next/link";
 
@@ -12,7 +12,9 @@ export default function Home() {
             <Link href="/2048" className={styles.puzzle}>
               2048
             </Link>
-            <div className={styles.puzzle}></div>
+            <Link href="/wordle" className={styles.puzzle}>
+              Wordle
+            </Link>
             <div className={styles.puzzle}></div>
             <div className={styles.puzzle}></div>
             <div className={styles.puzzle}></div>

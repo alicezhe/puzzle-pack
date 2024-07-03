@@ -1,6 +1,6 @@
 import styles from "@/styles/footer.module.css";
-import PortfolioIcon from "../../public/images/portfolio";
-import GithubIcon from "../../public/images/github";
+import PortfolioIcon from "../../../public/images/portfolio";
+import GithubIcon from "../../../public/images/github";
 
 export default function Footer({ fillColor }: any) {
   return (

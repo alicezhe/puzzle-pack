@@ -1,4 +1,4 @@
-import { tilesPerDimension } from "@/components/2048/constants";
+import { tilesPerDimension } from "@/constants/2048";
 import { Tile, TileMap } from "@/models/2048";
 import { flattenDeep, isEqual, isNil } from "lodash";
 import { uid } from "uid";

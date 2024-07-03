@@ -1,11 +1,12 @@
 "use client";
 
 import Puzzle2048Provider from "@/contexts/2048";
-import Board from "@/components/2048/board";
 import styles from "@/styles/2048.module.css";
+
+import Board from "@/components/2048/board";
 import Score from "@/components/2048/score";
-import Footer from "@/components/footer";
-import BackNavigation from "@/components/backNavigation";
+import Footer from "@/components/shared/footer";
+import BackNavigation from "@/components/shared/backNavigation";
 
 export default function Puzzle2048() {
   return (

@@ -1,7 +1,4 @@
-import {
-  mergeAnimationDuration,
-  tilesPerDimension,
-} from "@/components/2048/constants";
+import { mergeAnimationDuration, tilesPerDimension } from "@/constants/2048";
 import { Tile } from "@/models/2048";
 import Puzzle2048Reducer, { initialState } from "@/reducers/2048";
 import { isNil, throttle } from "lodash";
@@ -71,7 +68,6 @@ export default function Puzzle2048Provider({ children }: PropsWithChildren) {
   };
 
   const restartGame = () => {
-    console.log("restarting");
     dispatch({ type: "restart" });
     startGame();
   };

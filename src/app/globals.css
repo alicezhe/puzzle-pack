@@ -12,6 +12,21 @@
   --twenty48-tile-bg: #eee4da;
   --twenty48-primary-text-color: #776e65;
   --twenty48-secondary-text-color: #f9f6f2;
+
+  /* Wordle */
+  --wordle-light-bg: #fbf9f1;
+  --wordle-primary-bg: #f8f8f8;
+  --wordle-primary-text-color: #121213;
+  --wordle-light-gray: #d4d6da;
+  --wordle-medium-gray: #9c9c9c;
+  --wordle-dark-gray: #3a3a3c;
+  --wordle-yellow: #b59f3b;
+  --wordle-green: #538d4e;
+  --wordle-light-gray-hover: #aaabae;
+  --wordle-medium-gray-hover: #7d7d7d;
+  --wordle-dark-gray-hover: #2e2e30;
+  --wordle-yellow-hover: #917f2f;
+  --wordle-green-hover: #42713e;
 }
 
 body {
